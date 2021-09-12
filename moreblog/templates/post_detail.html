@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+{% for post in object_list %}
+
+<small>{{ post.published_date}}</small>
+<h3>{{ post.title}}</h2>
+<p>{{ post.text}}</p>
+
+{% endfor %}
+
+{% endblock %}

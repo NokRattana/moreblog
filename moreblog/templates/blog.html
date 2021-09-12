@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="album py-5 bg-light">
+        <div class="container">
+            <div class="pb-3 h5"></div>
+                <div class="row row-cols-3 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+{% for post in object_list %}
+<div class="col">
+          <div class="card shadow-lg"><br/>
+              <a class="text-dark text-decoration-none text-uppercase fw-bold text-center" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a><br/>
+            <img class="img-fluid" alt="Responsive image" src="{{ post.header_image.url }}">
+            <div class="card-body">
+              <p class="card-text">
+                <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">{{ post.text|slice:"100"|safe }}
+                    <a class="fw-blod text-primary bi bi-book" href="{% url 'post_detail' post.pk %}"> Läs mer</a></small></p>
+               </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+nok
+
+
+
+{% endfor %}
+
+{% endblock %}
+
